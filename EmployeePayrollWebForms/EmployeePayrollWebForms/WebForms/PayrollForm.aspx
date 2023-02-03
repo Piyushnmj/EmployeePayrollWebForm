@@ -15,29 +15,29 @@
     <div>
         <asp:Label ID="Label2" runat="server" Text="Label">Profile Image</asp:Label>
         <asp:RadioButtonList ID="rblImage" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
-            <asp:ListItem Text='<img src="../Images/Ellipse -1.png" alt="img1"/>' Value="1"></asp:ListItem>
-            <asp:ListItem Text='<img src="../Images/Ellipse -3.png" alt="img2"/>' Value="2"></asp:ListItem>
-            <asp:ListItem Text='<img src="../Images/Ellipse -4.png" alt="img3"/>' Value="3"></asp:ListItem>
-            <asp:ListItem Text='<img src="../Images/Ellipse -2.png" alt="img4"/>' Value="4"></asp:ListItem>
+            <asp:ListItem Text='<img src="../Images/Ellipse -1.png" alt="img1"/>' Value="../Images/Ellipse -1.png"></asp:ListItem>
+            <asp:ListItem Text='<img src="../Images/Ellipse -3.png" alt="img2"/>' Value="../Images/Ellipse -3.png"></asp:ListItem>
+            <asp:ListItem Text='<img src="../Images/Ellipse -4.png" alt="img3"/>' Value="../Images/Ellipse -4.png"></asp:ListItem>
+            <asp:ListItem Text='<img src="../Images/Ellipse -2.png" alt="img4"/>' Value="../Images/Ellipse -2.png"></asp:ListItem>
         </asp:RadioButtonList>
     </div>
     <br />
     <div>
         <asp:Label ID="Label3" runat="server" Text="Label">Gender</asp:Label>
         <asp:RadioButtonList ID="rblGender" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
-            <asp:ListItem>Male</asp:ListItem>
-            <asp:ListItem>Female</asp:ListItem>
+            <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+            <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
         </asp:RadioButtonList>
     </div>
     <br />
     <div>
         <asp:Label ID="Label4" runat="server" Text="Label">Department</asp:Label>
         <asp:CheckBoxList ID="cblDepartment" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
-            <asp:ListItem>HR</asp:ListItem>
-            <asp:ListItem>Sales</asp:ListItem>
-            <asp:ListItem>Finance</asp:ListItem>
-            <asp:ListItem>Engineer</asp:ListItem>
-            <asp:ListItem>Others</asp:ListItem>
+            <asp:ListItem Text="HR" Value="HR"></asp:ListItem>
+            <asp:ListItem Text="Sales" Value="Sales"></asp:ListItem>
+            <asp:ListItem Text="Finance" Value="Finance"></asp:ListItem>
+            <asp:ListItem Text="Engineer" Value="Engineer"></asp:ListItem>
+            <asp:ListItem Text="Others" Value="Others"></asp:ListItem>
         </asp:CheckBoxList>
     </div>
     <br />

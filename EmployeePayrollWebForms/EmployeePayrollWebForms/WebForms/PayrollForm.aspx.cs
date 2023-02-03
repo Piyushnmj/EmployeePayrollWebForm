@@ -61,13 +61,16 @@ namespace EmployeePayrollWebForms.WebForms
             string checklist = "";
             for(int i = 0; i < cblDepartment.Items.Count; i++)
             {
-                if(checklist == "")
+                if(cblDepartment.Items[i].Selected)
                 {
-                    checklist = cblDepartment.Items[i].Value;
-                }
-                else
-                {
-                    checklist += " " + cblDepartment.Items[i].Value;
+                    if (checklist == "")
+                    {
+                        checklist = cblDepartment.Items[i].Value;
+                    }
+                    else
+                    {
+                        checklist += " " + cblDepartment.Items[i].Value;
+                    }
                 }
             }
 
