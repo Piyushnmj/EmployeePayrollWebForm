@@ -25,7 +25,13 @@
                 <asp:BoundField DataField="SALARY" HeaderText="SALARY" SortExpression="SALARY" />
                 <asp:BoundField DataField="START_DATE" HeaderText="START_DATE" SortExpression="START_DATE" />
                 <asp:CommandField ShowEditButton="True" />
-                <asp:CommandField ShowDeleteButton="True" />
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:LinkButton runat="server"
+                            OnClientClick="return confirm('Are you sure you?');"
+                            CommandName="Delete">Delete</asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -37,6 +43,31 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeePayrollWebFormsConnectionString %>" SelectCommand="SELECT * FROM [PayrollDetails]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeePayrollWebFormsConnectionString %>"
+            SelectCommand="SELECT [IMG], [NAME], [GENDER], [DEPARTMENT], [SALARY], [START_DATE], [ID] FROM [PayrollDetails]"
+            ConflictDetection="CompareAllValues"
+            DeleteCommand="DELETE FROM [PayrollDetails] WHERE [ID] = @p_ID"
+            OldValuesParameterFormatString="p_{0}"
+            UpdateCommand="UPDATE [PayrollDetails] SET [IMG] = @IMG, [NAME] = @NAME, [GENDER] = @GENDER, [DEPARTMENT] = @DEPARTMENT, [SALARY] = @SALARY, [START_DATE] = @START_DATE 
+            WHERE [ID] = @p_ID AND [IMG] = @p_IMG AND [NAME] = @p_NAME AND [GENDER] = @p_GENDER AND [DEPARTMENT] = @p_DEPARTMENT AND [SALARY] = @p_SALARY AND [START_DATE] = @p_START_DATE">
+            <DeleteParameters>
+                <asp:Parameter Name="p_ID" Type="Int32" />
+            </DeleteParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="IMG" Type="String" />
+                <asp:Parameter Name="NAME" Type="String" />
+                <asp:Parameter Name="GENDER" Type="String" />
+                <asp:Parameter Name="DEPARTMENT" Type="String" />
+                <asp:Parameter Name="SALARY" Type="String" />
+                <asp:Parameter Name="START_DATE" Type="String" />
+                <asp:Parameter Name="p_ID" Type="Int32" />
+                <asp:Parameter Name="p_IMG" Type="String" />
+                <asp:Parameter Name="p_NAME" Type="String" />
+                <asp:Parameter Name="p_GENDER" Type="String" />
+                <asp:Parameter Name="p_DEPARTMENT" Type="String" />
+                <asp:Parameter Name="p_SALARY" Type="String" />
+                <asp:Parameter Name="p_START_DATE" Type="String" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
     </div>
 </asp:Content>

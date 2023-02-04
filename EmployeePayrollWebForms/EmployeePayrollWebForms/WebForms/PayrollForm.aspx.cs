@@ -79,7 +79,19 @@ namespace EmployeePayrollWebForms.WebForms
             objCommand.Parameters.AddWithValue("@START_DATE", ddlDay.SelectedValue + "/" + ddlMonth.SelectedValue + "/" + ddlYear.SelectedValue);
             objCommand.Parameters.AddWithValue("@NOTES", Notes.Text);
             objConnection.Open();
-            objCommand.ExecuteNonQuery();
+            var dataReader = objCommand.ExecuteReader();
+            if(dataReader != null)
+            {
+                Session["data"] = dataReader;
+                Response.Redirect("HomePage.aspx");
+                Label7.Text = "Data added successfully.";
+                Label7.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                Label7.Text = "Something went wrong. Try Again.";
+                Label7.ForeColor = System.Drawing.Color.Red;
+            }
             objConnection.Close();
         }
     }
