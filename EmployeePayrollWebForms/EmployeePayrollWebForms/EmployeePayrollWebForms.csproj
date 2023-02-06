@@ -130,10 +130,14 @@
     <Content Include="Images\Ellipse -3.png" />
     <Content Include="Images\Ellipse -4.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="StyleSheet\EmployeeLogin.css" />
     <Content Include="StyleSheet\HomePage.css" />
     <Content Include="StyleSheet\PayrollForm.css" />
+    <Content Include="StyleSheet\UserRegistration.css" />
+    <Content Include="WebForms\EmployeeLogin.aspx" />
     <Content Include="WebForms\HomePage.aspx" />
     <Content Include="WebForms\PayrollForm.aspx" />
+    <Content Include="WebForms\UserRegistration.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -225,6 +229,13 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebForms\EmployeeLogin.aspx.cs">
+      <DependentUpon>EmployeeLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\EmployeeLogin.aspx.designer.cs">
+      <DependentUpon>EmployeeLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForms\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,6 +249,13 @@
     </Compile>
     <Compile Include="WebForms\PayrollForm.aspx.designer.cs">
       <DependentUpon>PayrollForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\UserRegistration.aspx.cs">
+      <DependentUpon>UserRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\UserRegistration.aspx.designer.cs">
+      <DependentUpon>UserRegistration.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
