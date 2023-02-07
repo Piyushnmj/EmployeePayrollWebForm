@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Optimization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -30,14 +31,16 @@ namespace EmployeePayrollWebForms.WebForms
             DataTable objTable = new DataTable();
             objData.Fill(objTable);
             objConnection.Open();
-            var dataReader = objCommand.ExecuteNonQuery();
+            objCommand.ExecuteNonQuery();
             if (objTable.Rows.Count > 0)
             {
+                Login.Text = "Login Successful.";
+                Login.ForeColor = System.Drawing.Color.Green;
                 Response.Redirect("HomePage.aspx");
             }
             else
             {
-                Login.Text = "Email does not exist.";
+                Login.Text = "Email or Password is incorrect.";
                 Login.ForeColor = System.Drawing.Color.Red;
             }
             objConnection.Close();

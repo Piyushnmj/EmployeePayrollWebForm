@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Employee.Master" AutoEventWireup="true" CodeBehind="EmployeeLogin.aspx.cs" Inherits="EmployeePayrollWebForms.WebForms.EmployeeLogin" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../StyleSheet/EmployeeLogin.css" rel="stylesheet" />
 </asp:Content>
@@ -17,7 +18,7 @@
     <div>
         <asp:Label ID="Password" runat="server" Text="Label">Password</asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox2" runat="server" Height="18px" Width="190px"></asp:TextBox>
+        <asp:TextBox ID="TextBox2" runat="server" Height="18px" Width="190px" TextMode="Password"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Please Enter Password" ForeColor="Red"></asp:RequiredFieldValidator>
     </div>
     <br />
